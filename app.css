@@ -1,0 +1,123 @@
+/* custom CSS variables */
+:root{
+/* fonts */
+--font-family: 'Poppins',Arial, Helvetica, sans-serif;
+--font-size: 15px;
+--font-bold:600;
+/* colors */
+/* ### Primary */
+--red: hsl(0, 78%, 62%);
+--cyan: hsl(180, 62%, 55%);
+--orange: hsl(34, 97%, 64%);
+--blue: hsl(212, 86%, 64%);
+--attributions:hsl(228, 45%, 44%);
+/* ### Neutral */
+--very-dark-blue: hsl(234, 12%, 34%);
+--grayish-blue: hsl(229, 6%, 66%);
+--very-light-gray: hsl(0, 0%, 98%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+}
+.app-wrapper{
+    padding: 3em 1em;
+}
+
+/* banner */
+.banner{
+    text-align: center;
+}
+
+.header,.txt{
+    color: var(--grayish-blue);
+}
+.header.bold{
+    margin-bottom: 1em;
+    font-weight: var(--font-bold);
+    color: var(--very-dark-blue);
+}
+
+/* card */
+.card{
+    margin: 1.5em auto;
+    padding: 1.5em;
+    height: 15em;
+    border-style: none;
+    border-radius: 5px;
+    border-top: 5px solid var(--cyan);
+    box-shadow: 0 5px 15px 0px var(--grayish-blue);
+    position: relative;
+}
+.card .title{
+    font-weight: var(--font-bold);
+    color: var(--very-dark-blue);
+}
+.card .txt{
+    display: block;
+    margin-bottom: 5em;
+}
+.card::after{
+    content: url(./images/icon-supervisor.svg);
+    position: absolute;
+    bottom: .5em;
+    right: 1em;
+}
+
+/* different styles for each card component */
+.card#one{
+    margin-top: 4em;
+}
+.card#two{
+    border-top: 5px solid var(--red);
+}
+.card#two::after{
+    content: url(./images/icon-team-builder.svg);
+}
+.card#three{
+    border-top: 5px solid var(--orange);
+}
+.card#three::after{
+    content: url(./images/icon-karma.svg);
+}
+.card#four{
+    border-top: 5px solid var(--blue);
+}
+.card#four::after{
+    content: url(./images/icon-calculator.svg);
+}
+
+/* footer */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color:var(--attributions); }
+
+
+@media screen and (min-width:1201px){
+    .app-wrapper{
+        height: 100vh;
+        overflow: hidden;
+    }
+    .container{
+        transform: translateY(-15em);
+    }
+   .card{
+       margin: .5em auto;
+   }
+   .card#one{
+    transform: translateY(25em);
+    }
+   .card#four{
+       transform: translateY(-23em);
+   }
+   .banner{
+       transform: translateY(15em);
+   }
+   .attribution{
+    transform: translateY(-10em);
+   }
+}
